@@ -16,7 +16,7 @@ class SyncClient(BaseClient):
     def _exec(self, func):
         def wrapper(*args, **kwargs):
             url = (
-                f"{fields.PREFIX}"
+                f"{self._prefix}"
                 f"{func(*args, **kwargs)}"
                 f"{fields.API_KEY}"
                 f"{self._api_key}"

@@ -10,11 +10,13 @@ class BaseClient:
     def __init__(
         self,
         api_key: str,
+        prefix: str,
         debug: bool = False,  # display generated URLs for debugging purposes
     ):
         self._config = self._load_config()
         self._api_key = api_key
         self._debug = debug
+        self._prefix = prefix
 
     @staticmethod
     def _load_config(config_file: str = CONFIG_FILE) -> dict:
